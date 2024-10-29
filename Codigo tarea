@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+int main() {
+  // Inicializar variables
+  int puntaje = 0;
+  int respuesta;
+  char jugar_de_nuevo;
+
+  // Semilla para el generador de números aleatorios
+  srand(time(NULL));
+
+  // Bucle para jugar el juego
+  do {
+    // Mostrar la pregunta
+    printf("¿Cuál es la capital de Francia?\n");
+    printf("1. Berlín\n");
+    printf("2. París\n");
+    printf("3. Roma\n");
+
+    // Obtener la respuesta del usuario
+    printf("Ingrese su respuesta (1, 2 o 3): ");
+    scanf("%d", &respuesta);
+
+    // Verificar la respuesta
+    if (respuesta == 2) {
+      // Respuesta correcta
+      puntaje++;
+      printf("¡Correcto!\n");
+    } else {
+      // Respuesta incorrecta
+      printf("Incorrecto.\n");
+    }
+
+    // Mostrar el puntaje actual
+    printf("Su puntaje actual es: %d\n", puntaje);
+
+    // Preguntar si el usuario quiere jugar de nuevo
+    printf("¿Quiere jugar de nuevo (s/n)? ");
+    scanf(" %c", &jugar_de_nuevo);
+  } while (jugar_de_nuevo == 's');
+
+  // Mostrar el puntaje final
+  printf("Su puntaje final es: %d\n", puntaje);
+ return 0;
+}
